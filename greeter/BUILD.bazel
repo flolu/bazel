@@ -1,0 +1,7 @@
+genrule(
+    name = "greet",
+    srcs = ["//:bazel_file"],
+    outs = ["greeted.txt"],
+    cmd = "echo -n 'Hello ' >> $@ && cat $< >> $@",
+    # cmd = "echo -n 'Hello ' >> $@ && cat $(SRCS) >> $(OUTS)",
+)

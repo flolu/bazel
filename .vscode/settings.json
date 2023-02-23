@@ -1,3 +1,10 @@
 {
-  "cSpell.words": ["Bazel", "bazelbuild", "Bazelisk", "Buildifier", "choco"]
+  "cSpell.words": [
+    "Bazel",
+    "bazelbuild",
+    "Bazelisk",
+    "Buildifier",
+    "choco",
+    "Starlark"
+  ]
 }
