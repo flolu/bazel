@@ -1,7 +1,17 @@
+load("//testing:test_file_equals.bzl", "test_file_equals")
+
+OUTPUT_FILE = "greeted.txt"
+
 genrule(
     name = "greet",
     srcs = ["//:bazel_file"],
-    outs = ["greeted.txt"],
+    outs = [OUTPUT_FILE],
     cmd = "echo -n 'Hello ' >> $@ && cat $< >> $@",
     # cmd = "echo -n 'Hello ' >> $@ && cat $(SRCS) >> $(OUTS)",
+)
+
+test_file_equals(
+    name = "greet_test",
+    expected_content = "Hello Bazel 🌿",
+    file = OUTPUT_FILE,
 )

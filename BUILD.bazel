@@ -1,13 +1,21 @@
+load("//testing:test_file_equals.bzl", "test_file_equals")
+
 filegroup(
     name = "bazel_file",
     srcs = ["bazel.txt"],
     visibility = ["//greeter:__pkg__"],
 )
 
-sh_test(
+# sh_test(
+#     name = "bazel_file_test",
+#     size = "small",
+#     srcs = ["test_file_equals.sh"],
+#     args = ["$(location :bazel_file) 'Bazel 🌿'"],
+#     data = ["bazel_file"],
+# )
+
+test_file_equals(
     name = "bazel_file_test",
-    size = "small",
-    srcs = ["test_bazel_file.sh"],
-    args = ["$(location :bazel_file)"],
-    data = ["bazel_file"],
+    expected_content = "Bazel 🌿",
+    file = "bazel_file",
 )
