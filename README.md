@@ -33,6 +33,7 @@
 - `bazel clean` (Clean Bazel outputs)
 - `bazel build //greeter/...` (Build everything inside the `greeter` package)
 - `bazel build //:bazel_file` (Only build the `bazel_file` target)
+- `bazel test //...` (Test everything)
 
 > 💡 You can also omit the `//`
 

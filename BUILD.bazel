@@ -3,3 +3,11 @@ filegroup(
     srcs = ["bazel.txt"],
     visibility = ["//greeter:__pkg__"],
 )
+
+sh_test(
+    name = "bazel_file_test",
+    size = "small",
+    srcs = ["test_bazel_file.sh"],
+    args = ["$(location :bazel_file)"],
+    data = ["bazel_file"],
+)
