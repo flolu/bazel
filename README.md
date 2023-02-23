@@ -31,8 +31,8 @@
 - `bazel version` (Get version of Bazel)
 - `bazel build //...` (Build everything)
 - `bazel clean` (Clean Bazel outputs)
-- `bazel build //greeter/...` (Build everything inside the `greeter` package)
-- `bazel build //:bazel_file` (Only build the `bazel_file` target)
+- `bazel build //files/...` (Build everything inside the `files` package)
+- `bazel build //:bazel_slogan` (Only build the `bazel_slogan` target)
 - `bazel test //...` (Test everything)
 
 > 💡 You can also omit the `//`

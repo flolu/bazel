@@ -1,21 +1,20 @@
-load("//testing:test_file_equals.bzl", "test_file_equals")
+load("//testing:file_equals_test.bzl", "file_equals_test")
+load("//:concat_files.bzl", "concat_files")
 
-filegroup(
-    name = "bazel_file",
-    srcs = ["bazel.txt"],
-    visibility = ["//greeter:__pkg__"],
+concat_files(
+    name = "bazel_slogan",
+    files = [
+        # Disable formatting, since we don't want to sort the files
+        # buildifier: leave-alone
+        "//files:fast.txt",
+        "//files:correct.txt",
+        "//files:choose.txt",
+    ],
+    ouput_file = "bazel_slogan.txt",
 )
 
-# sh_test(
-#     name = "bazel_file_test",
-#     size = "small",
-#     srcs = ["test_file_equals.sh"],
-#     args = ["$(location :bazel_file) 'Bazel 🌿'"],
-#     data = ["bazel_file"],
-# )
-
-test_file_equals(
-    name = "bazel_file_test",
-    expected_content = "Bazel 🌿",
-    file = "bazel_file",
+file_equals_test(
+    name = "bazel_slogan_test",
+    expected_content = "{Fast, Correct} - Choose two",
+    file = "bazel_slogan",
 )

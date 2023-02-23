@@ -1,1 +1,1 @@
-exports_files(["test_file_equals.sh"])
+exports_files(["file_equals_test.sh"])

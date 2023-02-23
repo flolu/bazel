@@ -1,0 +1,21 @@
+load("//testing:file_equals_test.bzl", "file_equals_test")
+
+file_equals_test(
+    name = "fast_test",
+    expected_content = "{Fast, ",
+    file = "fast.txt",
+)
+
+file_equals_test(
+    name = "correct_test",
+    expected_content = "Correct}",
+    file = "correct.txt",
+)
+
+file_equals_test(
+    name = "choose_test",
+    expected_content = " - Choose two",
+    file = "choose.txt",
+)
+
+exports_files(glob(["*.txt"]))
