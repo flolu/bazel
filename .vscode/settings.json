@@ -5,6 +5,8 @@
     "Bazelisk",
     "Buildifier",
     "choco",
-    "Starlark"
+    "noimplicit",
+    "Starlark",
+    "Tpng"
   ]
 }

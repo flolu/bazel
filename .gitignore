@@ -1,2 +1,5 @@
 # Bazel's output directories
 bazel-*
+
+# Dependency graph
+graph.png
