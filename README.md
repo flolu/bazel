@@ -34,6 +34,7 @@
 - `bazel build //files/...` (Build everything inside the `files` package)
 - `bazel build //:bazel_slogan` (Only build the `bazel_slogan` target)
 - `bazel test //...` (Test everything)
+- `bazel query ...` (List all targets)
 - `bazel query --noimplicit_deps 'deps(:bazel_slogan_test)' --output graph | dot -Tpng > graph.png` (Generate a graph dependency graph of the `:bazel_slogan_test` target)
 
 > 💡 You can also omit the `//`
